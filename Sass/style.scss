@@ -1,0 +1,332 @@
+// import globalStyle
+@import "_globalStyle.scss";
+
+/*! start code */
+
+// start landing
+.landing {
+  background-image: url(../images/Premium-reviews-desktop\(2\).png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 12rem);
+  position: relative;
+  .text-content {
+    position: absolute;
+    left: 8%;
+    top: 20%;
+    text-align: left;
+    // transform: translate(-0%, -50%);
+    width: 28rem;
+    max-width: 100%;
+    color: $colorNormal;
+    line-height: 1.4;
+    .title {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font: {
+        size: 2.5rem;
+        weight: 500;
+      }
+      span {
+        color: $colorRed;
+      }
+    }
+    .subtitle {
+      max-width: 50%;
+      font: {
+        size: 1.125rem;
+        weight: 400;
+      }
+    }
+  }
+  /* tablet */
+  @include media("<=tablet") {
+    height: calc(100vh - 18rem);
+    background-size: 780px 520px;
+    .text-content {
+      width: 20rem;
+      .title {
+        font-size: 1.75rem;
+      }
+    }
+  }
+  @include media("<=420px") {
+    height: 48vh;
+    background-size: 420px 280px;
+    .text-content {
+      width: 14rem;
+      left: 4%;
+      top: 3rem;
+      .title {
+        font-size: 1.2rem;
+      }
+      .subtitle {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+
+// Start About
+.about {
+  margin: 4rem auto 6rem;
+  .container {
+    .about-content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12rem;
+      margin: 4rem auto auto;
+      .image {
+        position: relative;
+        width: 360px;
+        img {
+          width: inherit;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          right: -40px;
+          top: -30px;
+          width: 360px;
+          height: 480px;
+          border-left: 80px solid #ebeced;
+          border-bottom: 81px solid #ebeced;
+          z-index: -2;
+        }
+      }
+      .text {
+        .title {
+          margin: 1.25rem 0;
+          font: {
+            size: 1.875rem;
+            weight: 600;
+          }
+        }
+        .subtitle {
+          font: {
+            size: 1.25rem;
+            weight: 400;
+          }
+        }
+      }
+    }
+  }
+  @include media("<=999px") {
+    .container {
+      .about-content {
+        gap: 4rem;
+        .text .subtitle {
+          font-size: 1.125rem;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+  @include media("<=tablet") {
+    .container {
+      .about-content {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: 6rem auto;
+        .image {
+          margin: auto;
+        }
+        .text {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+  @include media("<=480px") {
+    .container .about-content {
+      margin: 2rem auto 4rem;
+      .image {
+        width: 330px;
+        &::before {
+          right: 6px;
+          top: -55px;
+          width: 280px;
+          height: 480px;
+        }
+      }
+    }
+  }
+  @include media("<=phone") {
+    .container .about-content {
+      .image {
+        width: 240px;
+        &::before {
+          right: 30px;
+          top: -30px;
+          width: 160px;
+          height: 320px;
+        }
+      }
+    }
+  }
+}
+
+// Start Product
+.Products {
+  .container {
+    .Product-content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 6rem;
+      margin: 4rem auto;
+      .image {
+        width: 25rem;
+        position: relative;
+        z-index: 100;
+        &::after {
+          content: "";
+          position: absolute;
+          background-color: $colorRed;
+          bottom: -2rem;
+          right: -2rem;
+          width: 8rem;
+          height: 8rem;
+          z-index: 1;
+        }
+        img {
+          max-width: 100%;
+          position: relative;
+          z-index: 100;
+        }
+      }
+      .text {
+        max-width: 40%;
+        margin-top: 2rem;
+        .title {
+          padding: 1rem 0;
+        }
+        .subtitle {
+          padding: 1rem 0;
+        }
+      }
+    }
+  }
+  @include media("<=tablet") {
+    .container .Product-content {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      .text {
+        max-width: 80%;
+      }
+    }
+  }
+  @include media("<=540px") {
+    .container .Product-content {
+      .image {
+        width: 20rem;
+      }
+    }
+  }
+  @include media("<=460px") {
+    .container .Product-content {
+      .image {
+        width: 16rem;
+        transform: translate(-20px, 40px);
+      }
+    }
+  }
+  @include media("<=340px") {
+    .container .Product-content {
+      .image {
+        width: 12rem;
+      }
+      .text {
+        max-width: 100%;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+.dir {
+  flex-direction: row-reverse;
+  .image {
+    transform: translate(-40px, 40px);
+  }
+  @include media("<=tablet") {
+    .image {
+      transform: translate(0px, 0px);
+    }
+  }
+}
+
+.support {
+  .container {
+    .support-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 3rem auto;
+      a {
+        text-decoration: none;
+      }
+      .card {
+        background-color: $colorNormal;
+        padding: 3.5rem 1.75rem;
+        text-align: center;
+        max-width: 16rem;
+        color: $colorDark;
+        border-radius: 0.25rem;
+        box-shadow: 0 6px 8px 2px rgb(200 200 200);
+        transition: 0.3s;
+        position: relative;
+        z-index: 1;
+        .icon {
+          width: max-content;
+          margin: auto;
+          svg {
+            width: 5rem;
+            height: 5rem;
+          }
+        }
+        .content {
+          padding-top: 1.75rem;
+        }
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.04);
+          transition: 0.3s;
+          .fill-color {
+            fill: $colorRed;
+          }
+          .scale-big {
+            transform: scale(1.1);
+          }
+        }
+      }
+      .scale {
+        padding: 5.5rem 1.75rem;
+        width: 14rem;
+        z-index: 10;
+      }
+    }
+  }
+  @include media("<=tablet") {
+    .container .support-content {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 2rem;
+      .card,
+      .scale {
+        max-width: initial;
+        width: 16rem;
+      }
+    }
+  }
+  @include media("<=phone") {
+    .container .support-content .card,
+    .scale {
+      width: 14rem;
+    }
+  }
+}
+
+

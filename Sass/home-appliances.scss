@@ -1,0 +1,263 @@
+// import globalStyle
+@import "_globalStyle.scss";
+
+/*! start code */
+/*! start landing */
+
+.landing {
+  min-height: 20vh;
+  background-color: $colorSubheading;
+  background-image: url(../images/miguel-alcantara-kyFMU43tA08-unsplash.jpg);
+  background-size: cover;
+  position: relative;
+  .text-content {
+    position: absolute;
+    width: max-content;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .title {
+      color: $colorSubheading;
+      font: {
+        size: 4rem;
+        weight: 600;
+      }
+    }
+  }
+  /* tablet */
+  @include media("<=tablet") {
+    .text-content .title {
+      font-size: 3rem;
+    }
+  }
+  @include media("<=480px") {
+    .text-content .title {
+      font-size: 2rem;
+    }
+  }
+}
+
+/*! start appliances */
+.appliances {
+  .cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      max-width: 24%;
+      padding: 1rem;
+      transition: 0.2s;
+      box-shadow: 0 6px 12px 1px rgb(220 220 220);
+      position: relative;
+      z-index: 1;
+      .cheek-box {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background-color: $colorNormal;
+        width: 1.75rem;
+        height: 1.75rem;
+        text-align: center;
+        padding-top: 0.25rem;
+        border: 2px outset $colorRed;
+        img {
+          opacity: 0;
+          max-width: 70%;
+        }
+      }
+      .show-cheek-mark img {
+        opacity: 1;
+      }
+      .image {
+        width: 60%;
+        transition: 0.2s;
+        margin-top: 0.75rem;
+        img {
+          max-width: 100%;
+        }
+      }
+      .text-content {
+        .name-device {
+          color: $colorDark;
+          font: {
+            size: 1.125rem;
+            weight: 400;
+          }
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        max-width: 26%;
+        transition: 0.2s;
+        .image {
+          width: 68%;
+          transition: 0.2s;
+        }
+        .text-content .name-device {
+          color: $colorRed;
+        }
+        &::before {
+          content: "select";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 1.4rem;
+          padding-top: 0.4rem;
+          text-align: center;
+          background-color: $colorRed;
+          color: $colorNormal;
+          z-index: 10;
+        }
+      }
+    }
+  }
+  @include media("<=tablet") {
+    .cards{
+      flex-direction: column;
+      .card{
+        max-width: 60%;
+      }
+    }
+  }
+}
+
+/*! start Products */
+.Products {
+  margin: 4rem auto;
+  .Products-cards {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem 2rem;
+    .Pro-card {
+      max-width: 16rem;
+      height: fit-content;
+      padding: 1rem;
+      border: 1px solid $colorRed;
+      .image-content {
+        max-width: fit-content;
+        text-align: center;
+        margin: auto;
+        img {
+          width: 80%;
+          max-height: 12rem;
+        }
+      }
+      .text-content {
+        .product-model {
+          font-size: 1rem !important;
+          color: $colorRed;
+          display: -webkit-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          &::before {
+            margin-right: 0.5rem;
+          }
+        }
+        .product-title {
+          margin: 0.5rem 0;
+          display: -webkit-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          a {
+            font: {
+              size: 1.125rem;
+              weight: 500;
+            }
+          }
+        }
+        .product-subtitle {
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+          display: -webkit-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+        .product-desc {
+          display: -webkit-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+        }
+        .product-features {
+          list-style-type: circle;
+          padding: 1rem 0 1.875rem 1.25rem;
+          font-size: 0.875rem;
+        }
+        .buttons {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .btn {
+            width: 6rem;
+          }
+          .add-to-cart a {
+            word-break: keep-all;
+            color: $colorDark;
+            font: {
+              size: 1rem;
+              weight: 500;
+            }
+            &:hover {
+              color: $colorRed;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.featuer {
+  background-color: $colorSubheading;
+  padding: 3rem 0;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .dateg {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      img {
+        width: 2.8rem;
+      }
+      .text {
+        font-size: 0.75rem;
+        .title {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  @include media("<=tablet") {
+    .container {
+      flex-direction: column;
+      gap: 3rem;
+      width: fit-content;
+      .dateg{
+        gap: 1rem;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+}
