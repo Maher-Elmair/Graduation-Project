@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* The image used */
+  background: url(../images/ales-nesetril-unsplash.jpg);
+
+  /* Used if the image is unavailable */
+  background-color: #f0f0f0;
+  /* You must set a specified height */
+  min-height: 100vh;
+  /* Do not repeat the image */
+  background-repeat: no-repeat;
+  /* Center the image */
+  background-position: center;
+  /* Resize the background image to cover the entire container */
+  background-size: cover;
+  /* clear:both; what do you use  */
+  position: relative;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .form {
+    background-color: #ffffff25;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    h2 {
+      color: #f0f0f0;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    button {
+      margin: 10px auto;
+      padding: 10px;
+      width: calc(100% - 20px);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #ec1c24;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      &:hover {
+        background-color: #b70f16;
+      }
+    }
+    /* Add this CSS to style the password toggle icon */
+    .password-input {
+      position: relative;
+      .password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        /* Additional styling for the icon */
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+.show-form {
+  color: #ec1c24;
+}
+
+
+/* Update the CSS for the password strength meter */
+#password-strength-meter {
+  margin-block: -14px 14px;
+  height: 4px;
+  background-color: #fafafa;
+  border-radius: 4px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Adjust specificity to ensure the style overrides */
+#password-strength-meter.password-strength-weak {
+  width: 33.33%;
+  background-color: #ec1c24; /* Red */
+}
+/* Adjust specificity to ensure the style overrides */
+#password-strength-meter.password-strength-medium {
+  width: 66.67%;
+  background-color: #ffd900; /* Yellow */
+}
+
+/* Adjust specificity to ensure the style overrides */
+#password-strength-meter.password-strength-strong {
+  width: 100%;
+  background-color: #66ff66; /* Green */
+}
