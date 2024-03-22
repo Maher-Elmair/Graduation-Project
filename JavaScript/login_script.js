@@ -28,7 +28,14 @@ function authenticateUser(username, password) {
 
 function redirectToHomePage() {
     // Redirect to the home page
-    window.location.href = '../Html/home.html'; // Replace 'home.html' with the URL of your home page
+    // window.location.href = '../Html/home.html'; // Replace 'home.html' with the URL of your home page
+    const loginForm = document.getElementById("login-form");
+    const OpenBtn = document.createElement("button");
+    loginForm.insertBefore(OpenBtn, loginForm.children[4]);
+    OpenBtn.innerHTML =
+        `
+        <a href="../Html/home.html" class="open-btn">Open Home Page</a>
+        `;
 }
 
 function register() {

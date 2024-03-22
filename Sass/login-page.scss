@@ -88,7 +88,10 @@ body {
 .show-form {
   color: #ec1c24;
 }
-
+.open-btn{
+  text-decoration: none;
+    color: white;
+}
 
 /* Update the CSS for the password strength meter */
 #password-strength-meter {
