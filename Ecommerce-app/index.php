@@ -35,7 +35,7 @@ if(isset($_SESSION["uid"])){
 			</div>
 		<div class="collapse navbar-collapse" id="collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="../index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+				<li><a href="../index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 				<li><a href="../Html/support.html"><span class="glyphicon glyphicon-modal-window"></span> Products</a></li>
 			</ul>
 			<form class="navbar-form navbar-left">
